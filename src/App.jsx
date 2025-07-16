@@ -8,8 +8,10 @@ import CategoryPage from './pages/CategoryPage';
 import ToolDetail from './pages/ToolDetail';
 import Agents from './pages/Agents';
 import MCPs from './pages/MCPs';
-import { searchTools } from './data/tools';
+import Courses from './pages/Courses';
+import { searchTools } from './data/tools/index';
 import ToolCard from './components/ToolCard';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const [searchResults, setSearchResults] = useState([]);
@@ -33,6 +35,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen bg-dark-900 text-white">
         <Header onSearch={handleSearch} />
         
@@ -56,6 +59,7 @@ function App() {
             <Route path="/tool/:toolId" element={<ToolDetail />} />
             <Route path="/agents" element={<Agents />} />
             <Route path="/mcps" element={<MCPs />} />
+            <Route path="/courses" element={<Courses />} />
           </Routes>
         </main>
         

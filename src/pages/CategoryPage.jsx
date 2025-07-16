@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ToolCard from '../components/ToolCard';
-import { categories, getToolsByCategory } from '../data/tools';
+import { categories } from '../data/categories';
+import { getToolsByCategory } from '../data/tools';
 
 const CategoryPage = () => {
   const { categoryId } = useParams();
@@ -33,7 +34,7 @@ const CategoryPage = () => {
       case 'name':
         return filtered.sort((a, b) => a.name.localeCompare(b.name));
       case 'newest':
-        return filtered.sort((a, b) => b.id - a.id);
+        return filtered.sort((a, b) => b.id.toString().localeCompare(a.id.toString()));
       default:
         return filtered;
     }

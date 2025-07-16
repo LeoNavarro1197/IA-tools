@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { categories } from '../data/tools';
+import { categories } from '../data/categories';
 import emailjs from '@emailjs/browser';
 
 const Header = ({ onSearch }) => {
@@ -147,6 +147,9 @@ const Header = ({ onSearch }) => {
             <Link to="/mcps" className="text-dark-300 hover:text-white transition-colors">
               MCPs
             </Link>
+            <Link to="/courses" className="text-dark-300 hover:text-white transition-colors">
+              Cursos
+            </Link>
             <button 
               className="btn-primary"
               onClick={() => setIsModalOpen(true)}
@@ -222,6 +225,13 @@ const Header = ({ onSearch }) => {
               onClick={() => setIsMenuOpen(false)}
             >
               MCPs
+            </Link>
+            <Link 
+              to="/courses" 
+              className="block text-dark-300 hover:text-white transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Cursos
             </Link>
             <button 
               className="btn-primary w-full mt-4"

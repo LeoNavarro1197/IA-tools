@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { categories } from '../data/tools';
+import { categories } from '../data/categories';
 
 const ToolCard = ({ tool }) => {
   const category = categories.find(cat => cat.id === tool.category);

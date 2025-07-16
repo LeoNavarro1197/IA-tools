@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { categories, getToolsByCategory } from '../data/tools';
+import { categories } from '../data/categories';
+import { getToolsByCategory } from '../data/tools';
 
 const Categories = () => {
   return (
